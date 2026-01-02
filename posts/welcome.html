@@ -9,10 +9,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
 </head>
+
+    <script>
+    const toggleButton = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Load saved theme or default to dark
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        body.classList.add('light'); // Not needed actually, since :root is light
+        toggleButton.innerHTML = '🌙';
+    } else {
+        body.classList.add('dark');
+        toggleButton.innerHTML = '☀️';
+    }
+
+    // Toggle function
+    toggleButton.addEventListener('click', () => {
+        if (body.classList.contains('dark')) {
+            body.classList.remove('dark');
+            toggleButton.innerHTML = '🌙';
+            localStorage.setItem('theme', 'light');
+        } else {
+            body.classList.add('dark');
+            toggleButton.innerHTML = '☀️';
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+</script>
+    
 <body>
     <header class="site-header">
-        <a href="../index.html">My Blog</a>
-    </header>
+    <a href="index.html">My Blog</a> <!-- On post pages: href="../index.html" -->
+    <button id="theme-toggle" aria-label="Toggle dark/light mode">☀️</button>
+</header>
 
     <!-- HERE IT IS: The featured header with image and title overlay -->
     <div class="featured-post" style="background-image: url('../assets/img/header-1.jpg');">
