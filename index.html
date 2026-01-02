@@ -17,13 +17,23 @@
     </header>
 
     <ul class="post-list">
-        <!-- Your post links here -->
-        <li>
-            <a href="posts/welcome.html">Welcome to My Blog</a>
+    <!-- Example post card – duplicate this <li> for new posts -->
+    <li class="post-card">
+        <a href="posts/welcome.html" class="post-link">
+            <div class="post-featured" style="background-image: url('assets/img/header-1.jpg');">  <!-- Same image as in your post file! -->
+                <div class="post-title-overlay">
+                    <h2>Welcome to My Blog</h2>  <!-- Same as post title -->
+                </div>
+            </div>
+        </a>
+        <div class="post-excerpt">
             <span class="post-date">January 02, 2026</span>
-            <p>Testing the custom header and post style.</p>
-        </li>
-    </ul>
+            <p>Optional short teaser/description here. Write a sentence or two to hook readers.</p>
+        </div>
+    </li>
+
+    <!-- Add more <li class="post-card"> here for older posts -->
+</ul>
 
     <!-- Script goes HERE, inside body, at the end -->
     <script>
