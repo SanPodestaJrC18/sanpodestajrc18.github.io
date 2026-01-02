@@ -3,73 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Blog</title> <!-- Change per post -->
+    <title>Welcome to My Blog</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style.css">  <!-- Note the ../ for posts folder -->
 </head>
+<body>  <!-- Optional: class="dark" fallback -->
 
-  
-<body>
-   <header class="site-header">
-    <a href="index.html">My Blog</a> <!-- On post pages: href="../index.html" -->
-    <button id="theme-toggle" aria-label="Toggle dark/light mode">☀️</button>
-</header>
-    <div class="featured-post" style="background-image: url('../assets/img/your-header-image.jpg');"> <!-- Change image path -->
-        <h1><span>Welcome to My Blog</span></h1> <!-- Post title here -->
+    <header class="site-header">
+        <a href="../index.html">My Blog</a>  <!-- ../ to go up one folder -->
+        <button id="theme-toggle" aria-label="Toggle dark/light mode">☀️</button>
+    </header>
+
+    <div class="featured-post" style="background-image: url('../assets/img/your-header-image.jpg');">
+        <h1><span>Welcome to My Blog</span></h1>
     </div>
 
     <main class="post-content">
-        <span class="post-date">January 02, 2026</span> <!-- Change date -->
+        <span class="post-date">January 02, 2026</span>
 
         <div class="content">
-            <!-- Write your post content in HTML here -->
-            <p>Hey, this is my first post! Everything is custom-built.</p>
-            
-            <h2>A Heading</h2>
-            <p>Paragraph text looks clean with good line height.</p>
-            
-            <ul>
-                <li>Lists work great</li>
-                <li>With proper spacing</li>
-            </ul>
-            
-            <pre><code>function example() {
-    console.log("Code blocks are styled too");
-}</code></pre>
-            
-            <img src="../assets/img/inline-image.jpg" alt="An image in the post">
+            <!-- Your post content -->
+            <p>Hey, this is my first post! ...</p>
+            <!-- etc. -->
         </div>
     </main>
-      <script>
-    const toggleButton = document.getElementById('theme-toggle');
-    const body = document.body;
 
-    // Load saved theme or default to dark
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-        body.classList.add('light'); // Not needed actually, since :root is light
-        toggleButton.innerHTML = '🌙';
-    } else {
-        body.classList.add('dark');
-        toggleButton.innerHTML = '☀️';
-    }
+    <!-- Script HERE, same as above -->
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
 
-    // Toggle function
-    toggleButton.addEventListener('click', () => {
-        if (body.classList.contains('dark')) {
-            body.classList.remove('dark');
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
             toggleButton.innerHTML = '🌙';
-            localStorage.setItem('theme', 'light');
         } else {
             body.classList.add('dark');
             toggleButton.innerHTML = '☀️';
-            localStorage.setItem('theme', 'dark');
         }
-    });
-</script>
-    
+
+        toggleButton.addEventListener('click', () => {
+            if (body.classList.contains('dark')) {
+                body.classList.remove('dark');
+                toggleButton.innerHTML = '🌙';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.classList.add('dark');
+                toggleButton.innerHTML = '☀️';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
 </body>
-    
 </html>
