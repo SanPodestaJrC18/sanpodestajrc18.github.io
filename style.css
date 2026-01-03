@@ -247,17 +247,20 @@ img {
     .featured-post h1 span { font-size: 2.2rem; }
 }
 
-/* footer */ 
-
+/* Footer: minimal signature */
 .site-footer {
     text-align: center;
-    padding: 2rem 0;
+    padding: 1rem 0;
+    font-size: 0.85rem;
     color: var(--meta-color);
-    font-size: 0.9rem;
 }
+
 .site-footer a {
     color: var(--link-color);
+    text-decoration: none;
 }
+
 .site-footer a:hover {
     color: var(--link-hover);
+    text-decoration: underline;
 }
