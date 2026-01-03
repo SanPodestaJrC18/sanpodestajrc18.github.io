@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">  <!-- Note the ../ for posts folder -->
+</head>
+<body>  <!-- Optional: class="dark" fallback -->
+
+    <header class="site-header">
+        <a href="../index.html">San Podesta Jr C18</a>  <!-- ../ to go up one folder -->
+        <button id="theme-toggle" aria-label="Toggle dark/light mode">⚽</button>
+    </header>
+
+  <div class="featured-post" style="background-image: url('../assets/img/header-2.jpg');">  <!-- Note the ../ here -->
+    <h1><span>Update</span></h1>
+</div>
+
+    <main class="post-content">
+        <span class="post-date">January 03, 2026</span>
+
+        <div class="content">
+            <!-- Your post content -->
+            <p>Hey, this is my first post! ...</p>
+            <!-- etc. -->
+        </div>
+    </main>
+
+    <!-- Script HERE, same as above -->
+    <script>
+    const toggleButton = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Load saved theme or default to dark
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        // No class change needed (light is default)
+    } else {
+        body.classList.add('dark');
+    }
+
+    // Toggle function (just theme, no icon change)
+    toggleButton.addEventListener('click', () => {
+        if (body.classList.contains('dark')) {
+            body.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+        } else {
+            body.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+</script>
+</body>
+</html>
