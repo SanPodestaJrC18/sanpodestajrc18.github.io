@@ -246,3 +246,18 @@ img {
     .featured-post { height: 350px; }
     .featured-post h1 span { font-size: 2.2rem; }
 }
+
+/* footer */ 
+
+.site-footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--meta-color);
+    font-size: 0.9rem;
+}
+.site-footer a {
+    color: var(--link-color);
+}
+.site-footer a:hover {
+    color: var(--link-hover);
+}
