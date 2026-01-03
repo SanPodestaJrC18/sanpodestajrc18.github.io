@@ -40,29 +40,28 @@
         -->
     </ul>
 
-    <script>
-        const toggleButton = document.getElementById('theme-toggle');
-        const body = document.body;
+   <script>
+    const toggleButton = document.getElementById('theme-toggle');
+    const body = document.body;
 
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'light') {
-            toggleButton.innerHTML = '🌙';
+    // Load saved theme or default to dark
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        // No class change needed (light is default)
+    } else {
+        body.classList.add('dark');
+    }
+
+    // Toggle function (just theme, no icon change)
+    toggleButton.addEventListener('click', () => {
+        if (body.classList.contains('dark')) {
+            body.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
         } else {
             body.classList.add('dark');
-            toggleButton.innerHTML = '☀️';
+            localStorage.setItem('theme', 'dark');
         }
-
-        toggleButton.addEventListener('click', () => {
-            if (body.classList.contains('dark')) {
-                body.classList.remove('dark');
-                toggleButton.innerHTML = '🌙';
-                localStorage.setItem('theme', 'light');
-            } else {
-                body.classList.add('dark');
-                toggleButton.innerHTML = '☀️';
-                localStorage.setItem('theme', 'dark');
-            }
-        });
-    </script>
+    });
+</script>
 </body>
 </html>
