@@ -52,33 +52,29 @@ a:hover {
     text-decoration: none;
     color: var(--text-color);
 }
+
+/* button */
 #theme-toggle {
     background: none;
     border: none;
-    font-size: 2.4rem; /* Bigger ball */
+    font-size: 1rem;            /* Matches footer text size for proportion */
     cursor: pointer;
-    padding: 0;                 /* Removed previous 10px padding */
-    margin: 0;                  /* Removes default button margins */
+    padding: 0;
+    margin: 0 -0.1em 0 0.2em;    /* Fine-tuned: pulls it closer (adjust the 0.2em if needed) */
     color: var(--text-color);
     transition: transform 0.4s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;     /* Perfect alignment with text */
+    vertical-align: baseline;   /* Better inline text alignment than middle */
+    line-height: 1;
 }
 #theme-toggle:hover {
-    transform: rotate(360deg); /* Spin on hover = kick vibe */
+    transform: rotate(360deg);  /* Spin on hover = kick vibe */
 }
 #theme-toggle:active {
     animation: bounce 0.4s ease; /* Quick bounce on click */
 }
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-/* Mobile tweak */
-@media (max-width: 600px) {
-    #theme-toggle { font-size: 2rem; }
+    50% { transform: translateY(-6px); }  /* Smaller bounce to fit footer scale */
 }
 /* Minimal gallery cards on home */
 .post-list {
